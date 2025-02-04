@@ -18,6 +18,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 fill: true
             }]
+        },
+        options: {
+            scales: {
+                x: {
+                    ticks: { color: '#ffffff' },
+                    grid: { color: '#333333' }
+                },
+                y: {
+                    ticks: { color: '#ffffff' },
+                    grid: { color: '#333333' }
+                }
+            },
+            plugins: {
+                legend: { labels: { color: '#ffffff' } }
+            }
         }
     });
 
@@ -34,6 +49,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 borderColor: 'rgba(255, 99, 132, 1)',
                 borderWidth: 1
             }]
+        },
+        options: {
+            scales: {
+                x: {
+                    ticks: { color: '#ffffff' },
+                    grid: { color: '#333333' }
+                },
+                y: {
+                    ticks: { color: '#ffffff' },
+                    grid: { color: '#333333' }
+                }
+            },
+            plugins: {
+                legend: { labels: { color: '#ffffff' } }
+            }
         }
     });
 
@@ -62,6 +92,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 ],
                 borderWidth: 1
             }]
+        },
+        options: {
+            plugins: {
+                legend: { labels: { color: '#ffffff' } }
+            }
         }
     });
 });
