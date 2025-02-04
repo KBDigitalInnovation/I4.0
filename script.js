@@ -5,9 +5,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const qualityData = [90, 85, 88, 92, 87];
     const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May'];
 
+    // Função para atualizar os dados dinamicamente
+    function updateChart(chart, data) {
+        chart.data.datasets[0].data = data;
+        chart.update();
+    }
+
     // Gráfico de Produção
     const productionCtx = document.getElementById('productionChart').getContext('2d');
-    new Chart(productionCtx, {
+    const productionChart = new Chart(productionCtx, {
         type: 'line',
         data: {
             labels: labels,
@@ -38,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Gráfico de Manutenção
     const maintenanceCtx = document.getElementById('maintenanceChart').getContext('2d');
-    new Chart(maintenanceCtx, {
+    const maintenanceChart = new Chart(maintenanceCtx, {
         type: 'bar',
         data: {
             labels: labels,
@@ -69,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Gráfico de Qualidade
     const qualityCtx = document.getElementById('qualityChart').getContext('2d');
-    new Chart(qualityCtx, {
+    const qualityChart = new Chart(qualityCtx, {
         type: 'pie',
         data: {
             labels: labels,
@@ -99,4 +105,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+
+    // Exemplo de atualização dinâmica dos dados
+    setTimeout(() => {
+        const newProductionData = [120, 210, 160, 310, 260];
+        updateChart(productionChart, newProductionData);
+    }, 5000); // Atualiza os dados após 5 segundos
 });
